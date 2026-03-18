@@ -48,17 +48,22 @@ const F1Rsvp = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <div className="font-mono text-xs text-accent tracking-widest mb-4">
-              {t("REGISTRATION SUCCESSFUL", "تم التسجيل بنجاح")}
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-10 h-px bg-accent/40" />
+              <div className="w-2 h-2 rotate-45 border border-accent/50" />
+              <div className="w-10 h-px bg-accent/40" />
             </div>
-            <h2 className="font-display text-4xl md:text-6xl text-foreground mb-4">
+            <div className="font-mono text-xs text-accent tracking-widest mb-4">
+              {t("YOU'RE ON THE GRID", "أنت على الشبكة")}
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl text-foreground mb-2">
               P{form.gridPosition}
             </h2>
-            <p className="font-display text-lg text-secondary">
-              {t("GRID POSITION CONFIRMED", "تأكيد موقعك على الشبكة")}
-            </p>
-            <p className="font-body text-sm text-muted-foreground mt-4">
-              {t(`Welcome to the grid, ${form.driverName}!`, `مرحباً بك في السباق، ${form.driverName}!`)}
+            <p className="font-body text-sm text-muted-foreground mt-4 leading-relaxed">
+              {t(
+                `Thank you, ${form.driverName}! We're thrilled to have you celebrate with us.`,
+                `شكراً لك ${form.driverName}! يسعدنا حضورك للاحتفال معنا.`
+              )}
             </p>
           </motion.div>
         </div>
