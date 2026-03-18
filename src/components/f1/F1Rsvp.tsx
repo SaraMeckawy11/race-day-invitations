@@ -48,17 +48,22 @@ const F1Rsvp = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <div className="font-mono text-xs text-accent tracking-widest mb-4">
-              {t("REGISTRATION SUCCESSFUL", "تم التسجيل بنجاح")}
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-10 h-px bg-accent/40" />
+              <div className="w-2 h-2 rotate-45 border border-accent/50" />
+              <div className="w-10 h-px bg-accent/40" />
             </div>
-            <h2 className="font-display text-4xl md:text-6xl text-foreground mb-4">
+            <div className="font-mono text-xs text-accent tracking-widest mb-4">
+              {t("YOU'RE ON THE GRID", "أنت على الشبكة")}
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl text-foreground mb-2">
               P{form.gridPosition}
             </h2>
-            <p className="font-display text-lg text-secondary">
-              {t("GRID POSITION CONFIRMED", "تأكيد موقعك على الشبكة")}
-            </p>
-            <p className="font-body text-sm text-muted-foreground mt-4">
-              {t(`Welcome to the grid, ${form.driverName}!`, `مرحباً بك في السباق، ${form.driverName}!`)}
+            <p className="font-body text-sm text-muted-foreground mt-4 leading-relaxed">
+              {t(
+                `Thank you, ${form.driverName}! We're thrilled to have you celebrate with us.`,
+                `شكراً لك ${form.driverName}! يسعدنا حضورك للاحتفال معنا.`
+              )}
             </p>
           </motion.div>
         </div>
@@ -69,20 +74,26 @@ const F1Rsvp = () => {
   return (
     <section id="rsvp" className="py-20 px-6 md:px-12">
       <div className="max-w-lg mx-auto">
-        <div className="flex items-center gap-3 mb-12">
+        <div className="flex items-center gap-3 mb-6">
           <div className="w-6 h-1 bg-primary" />
           <span className="font-display text-xs tracking-[0.3em] text-secondary uppercase">
-            {t("GRID REGISTRATION", "التسجيل في السباق")}
+            {t("RSVP", "تأكيد الحضور")}
           </span>
         </div>
 
-        <h2 className="font-display text-3xl md:text-5xl mb-10 text-foreground">
-          {t("REGISTER FOR THE GRID", "سجّل في الشبكة")}
+        <h2 className="font-display text-3xl md:text-4xl mb-3 text-foreground">
+          {t("WILL YOU JOIN US?", "هل ستنضمون إلينا؟")}
         </h2>
+        <p className="font-body text-sm text-muted-foreground mb-10 leading-relaxed">
+          {t(
+            "We would be honored to have you celebrate this special day with us. Please let us know if you can make it.",
+            "يسعدنا ويشرفنا حضوركم لمشاركتنا هذا اليوم المميز. يرجى إعلامنا بإمكانية حضوركم."
+          )}
+        </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className={labelClass}>{t("DRIVER NAME", "اسم السائق")}</label>
+            <label className={labelClass}>{t("YOUR NAME", "الاسم")}</label>
             <input
               required
               value={form.driverName}
@@ -93,7 +104,7 @@ const F1Rsvp = () => {
           </div>
 
           <div>
-            <label className={labelClass}>{t("TEAM / CONSTRUCTOR", "الفريق")}</label>
+            <label className={labelClass}>{t("FAMILY / GROUP", "العائلة / المجموعة")}</label>
             <input
               value={form.team}
               onChange={(e) => setForm({ ...form, team: e.target.value })}
@@ -103,7 +114,7 @@ const F1Rsvp = () => {
           </div>
 
           <div>
-            <label className={labelClass}>{t("RACE ENTRY", "المشاركة في السباق")}</label>
+            <label className={labelClass}>{t("ATTENDING", "الحضور")}</label>
             <div className="flex gap-3">
               {(["yes", "no"] as const).map((v) => (
                 <button
@@ -116,7 +127,7 @@ const F1Rsvp = () => {
                       : "bg-surface text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {v === "yes" ? t("LIGHTS OUT", "انطلق") : t("DNS", "لن أحضر")}
+                  {v === "yes" ? t("JOYFULLY ACCEPT", "بكل سرور") : t("REGRETFULLY DECLINE", "نعتذر")}
                 </button>
               ))}
             </div>
@@ -124,7 +135,7 @@ const F1Rsvp = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className={labelClass}>{t("CREW SIZE", "عدد الأفراد")}</label>
+              <label className={labelClass}>{t("NUMBER OF GUESTS", "عدد الضيوف")}</label>
               <select
                 value={form.guestCount}
                 onChange={(e) => setForm({ ...form, guestCount: e.target.value })}
@@ -136,7 +147,7 @@ const F1Rsvp = () => {
               </select>
             </div>
             <div>
-              <label className={labelClass}>{t("FUEL TYPE", "نوع الوقود")}</label>
+              <label className={labelClass}>{t("MEAL PREFERENCE", "تفضيل الطعام")}</label>
               <select
                 value={form.mealPreference}
                 onChange={(e) => setForm({ ...form, mealPreference: e.target.value })}
@@ -151,22 +162,22 @@ const F1Rsvp = () => {
           </div>
 
           <div>
-            <label className={labelClass}>{t("RADIO MESSAGE", "رسالة لاسلكية")}</label>
+            <label className={labelClass}>{t("YOUR MESSAGE", "رسالتكم")}</label>
             <textarea
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               className={`${inputClass} h-24 resize-none`}
-              placeholder={t("Leave a message for the team...", "اترك رسالة للفريق...")}
+              placeholder={t("A few words for the couple...", "كلمة للعروسين...")}
             />
           </div>
 
           <motion.button
             type="submit"
-            whileHover={{ x: 4, y: -2, boxShadow: "4px 4px 0px 0px #FFD700" }}
-            whileTap={{ scale: 0.95 }}
-            className="skew-btn bg-primary px-8 py-4 font-display text-sm tracking-widest text-primary-foreground w-full"
+            whileHover={{ y: -2, boxShadow: "0 4px 20px rgba(232,0,45,0.3)" }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-primary px-8 py-4 font-display text-xs tracking-[0.3em] text-primary-foreground w-full"
           >
-            <span>{t("CONFIRM ENTRY", "تأكيد الدخول")}</span>
+            {t("SEND RSVP", "إرسال التأكيد")}
           </motion.button>
         </form>
       </div>

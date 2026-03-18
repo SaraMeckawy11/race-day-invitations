@@ -23,9 +23,12 @@ const F1Gallery = () => {
           </span>
         </div>
 
-        <h2 className="font-display text-3xl md:text-5xl mb-12 text-foreground">
-          {t("GALLERY", "المعرض")}
+        <h2 className="font-display text-3xl md:text-4xl mb-3 text-foreground">
+          {t("OUR MOMENTS", "لحظاتنا")}
         </h2>
+        <p className="font-body text-sm text-muted-foreground mb-12">
+          {t("A glimpse into our journey together.", "لمحة من رحلتنا معاً.")}
+        </p>
 
         <div className="columns-2 md:columns-3 gap-3 space-y-3">
           {placeholderImages.map((src, i) => (

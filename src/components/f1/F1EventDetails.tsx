@@ -35,9 +35,15 @@ const F1EventDetails = () => {
           </span>
         </div>
 
-        <h2 className="font-display text-3xl md:text-5xl mb-16 text-foreground">
-          {t("EVENT DETAILS", "تفاصيل الحدث")}
+        <h2 className="font-display text-3xl md:text-4xl mb-3 text-foreground">
+          {t("THE CELEBRATION", "الاحتفال")}
         </h2>
+        <p className="font-body text-sm text-muted-foreground mb-12 leading-relaxed max-w-lg">
+          {t(
+            "Join us for a weekend of love, laughter, and a little bit of racing spirit.",
+            "انضموا إلينا في عطلة نهاية أسبوع مليئة بالحب والفرح وروح السباق."
+          )}
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {schedule.map((s, i) => (

@@ -37,9 +37,12 @@ const F1OurStory = () => {
           </span>
         </div>
 
-        <h2 className="font-display text-3xl md:text-5xl mb-16 text-foreground">
-          {t("OUR STORY", "قصتنا")}
+        <h2 className="font-display text-3xl md:text-4xl mb-3 text-foreground">
+          {t("OUR LOVE STORY", "قصة حبنا")}
         </h2>
+        <p className="font-body text-sm text-muted-foreground mb-16 leading-relaxed">
+          {t("Every great race has a story. Here's ours.", "كل سباق عظيم له قصة. هذه قصتنا.")}
+        </p>
 
         {/* Timeline */}
         <div className="relative">
