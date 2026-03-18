@@ -104,7 +104,7 @@ const F1Rsvp = () => {
           </div>
 
           <div>
-            <label className={labelClass}>{t("TEAM / CONSTRUCTOR", "الفريق")}</label>
+            <label className={labelClass}>{t("FAMILY / GROUP", "العائلة / المجموعة")}</label>
             <input
               value={form.team}
               onChange={(e) => setForm({ ...form, team: e.target.value })}
