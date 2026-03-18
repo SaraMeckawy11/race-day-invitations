@@ -135,7 +135,7 @@ const F1Rsvp = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className={labelClass}>{t("CREW SIZE", "عدد الأفراد")}</label>
+              <label className={labelClass}>{t("NUMBER OF GUESTS", "عدد الضيوف")}</label>
               <select
                 value={form.guestCount}
                 onChange={(e) => setForm({ ...form, guestCount: e.target.value })}
