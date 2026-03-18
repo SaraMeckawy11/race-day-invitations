@@ -93,7 +93,7 @@ const F1Rsvp = () => {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className={labelClass}>{t("DRIVER NAME", "اسم السائق")}</label>
+            <label className={labelClass}>{t("YOUR NAME", "الاسم")}</label>
             <input
               required
               value={form.driverName}
