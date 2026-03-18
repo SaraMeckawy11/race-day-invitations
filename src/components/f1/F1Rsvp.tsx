@@ -147,7 +147,7 @@ const F1Rsvp = () => {
               </select>
             </div>
             <div>
-              <label className={labelClass}>{t("FUEL TYPE", "نوع الوقود")}</label>
+              <label className={labelClass}>{t("MEAL PREFERENCE", "تفضيل الطعام")}</label>
               <select
                 value={form.mealPreference}
                 onChange={(e) => setForm({ ...form, mealPreference: e.target.value })}
