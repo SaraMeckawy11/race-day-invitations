@@ -74,16 +74,22 @@ const F1Rsvp = () => {
   return (
     <section id="rsvp" className="py-20 px-6 md:px-12">
       <div className="max-w-lg mx-auto">
-        <div className="flex items-center gap-3 mb-12">
+        <div className="flex items-center gap-3 mb-6">
           <div className="w-6 h-1 bg-primary" />
           <span className="font-display text-xs tracking-[0.3em] text-secondary uppercase">
-            {t("GRID REGISTRATION", "التسجيل في السباق")}
+            {t("RSVP", "تأكيد الحضور")}
           </span>
         </div>
 
-        <h2 className="font-display text-3xl md:text-5xl mb-10 text-foreground">
-          {t("REGISTER FOR THE GRID", "سجّل في الشبكة")}
+        <h2 className="font-display text-3xl md:text-4xl mb-3 text-foreground">
+          {t("WILL YOU JOIN US?", "هل ستنضمون إلينا؟")}
         </h2>
+        <p className="font-body text-sm text-muted-foreground mb-10 leading-relaxed">
+          {t(
+            "We would be honored to have you celebrate this special day with us. Please let us know if you can make it.",
+            "يسعدنا ويشرفنا حضوركم لمشاركتنا هذا اليوم المميز. يرجى إعلامنا بإمكانية حضوركم."
+          )}
+        </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
