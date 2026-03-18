@@ -173,11 +173,11 @@ const F1Rsvp = () => {
 
           <motion.button
             type="submit"
-            whileHover={{ x: 4, y: -2, boxShadow: "4px 4px 0px 0px #FFD700" }}
-            whileTap={{ scale: 0.95 }}
-            className="skew-btn bg-primary px-8 py-4 font-display text-sm tracking-widest text-primary-foreground w-full"
+            whileHover={{ y: -2, boxShadow: "0 4px 20px rgba(232,0,45,0.3)" }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-primary px-8 py-4 font-display text-xs tracking-[0.3em] text-primary-foreground w-full"
           >
-            <span>{t("CONFIRM ENTRY", "تأكيد الدخول")}</span>
+            {t("SEND RSVP", "إرسال التأكيد")}
           </motion.button>
         </form>
       </div>
