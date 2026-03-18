@@ -162,12 +162,12 @@ const F1Rsvp = () => {
           </div>
 
           <div>
-            <label className={labelClass}>{t("RADIO MESSAGE", "رسالة لاسلكية")}</label>
+            <label className={labelClass}>{t("YOUR MESSAGE", "رسالتكم")}</label>
             <textarea
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               className={`${inputClass} h-24 resize-none`}
-              placeholder={t("Leave a message for the team...", "اترك رسالة للفريق...")}
+              placeholder={t("A few words for the couple...", "كلمة للعروسين...")}
             />
           </div>
 
