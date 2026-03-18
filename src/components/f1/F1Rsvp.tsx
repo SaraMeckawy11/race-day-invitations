@@ -114,7 +114,7 @@ const F1Rsvp = () => {
           </div>
 
           <div>
-            <label className={labelClass}>{t("RACE ENTRY", "المشاركة في السباق")}</label>
+            <label className={labelClass}>{t("ATTENDING", "الحضور")}</label>
             <div className="flex gap-3">
               {(["yes", "no"] as const).map((v) => (
                 <button
