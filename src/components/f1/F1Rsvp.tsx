@@ -127,7 +127,7 @@ const F1Rsvp = () => {
                       : "bg-surface text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {v === "yes" ? t("LIGHTS OUT", "انطلق") : t("DNS", "لن أحضر")}
+                  {v === "yes" ? t("JOYFULLY ACCEPT", "بكل سرور") : t("REGRETFULLY DECLINE", "نعتذر")}
                 </button>
               ))}
             </div>
